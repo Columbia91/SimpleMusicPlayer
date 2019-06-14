@@ -1,0 +1,38 @@
+﻿<Window x:Class="MusicPlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicPlayer"
+        mc:Ignorable="d"
+        Title="AIMP" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" SpreadMethod="Repeat">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="YellowGreen" Offset="0.6"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="openButton" Click="OpenButton_Click" Content="Open File..." 
+                HorizontalAlignment="Left" Margin="17,162,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="playButton" Click="PlayButton_Click" Content="Play" 
+                HorizontalAlignment="Left" Margin="116,152,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <Button x:Name="pauseButton" Click="PauseButton_Click" Content="Pause" 
+                HorizontalAlignment="Left" Margin="196,152,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <Button x:Name="stopButton" Click="StopButton_Click" Content="Stop" 
+                HorizontalAlignment="Left" Margin="276,152,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <Label x:Name="timeLabel" Content="----------" HorizontalAlignment="Left" Margin="356,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.471,0.295"/>
+        <Label Content="Now Playing :" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="musicNameLabel" Content="(No Song...)" HorizontalAlignment="Left" Margin="17,94,0,0" VerticalAlignment="Top" Width="412"/>
+        <Slider x:Name="progressSlider" 
+                Thumb.DragCompleted="ProgressSlider_DragCompleted"
+                HorizontalAlignment="Left" Margin="17,125,0,0" VerticalAlignment="Top" Width="334"/>
+        <Label x:Name="label" Content="MUSIC PLAYER" HorizontalAlignment="Left" Margin="173,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+        <Label Content="Текст:" FontWeight="Bold" HorizontalAlignment="Left" Margin="17,202,0,0" VerticalAlignment="Top" Height="26" Width="75"/>
+        <Image Source="Pictures/music_1.jpg"
+            HorizontalAlignment="Left" Height="322" Margin="457,50,0,0" VerticalAlignment="Top" Width="301"/>
+        <TextBox Name="notesTextBox" HorizontalAlignment="Left" Height="169" Margin="17,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397"/>
+    </Grid>
+</Window>
